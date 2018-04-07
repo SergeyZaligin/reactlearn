@@ -1,57 +1,31 @@
-const NOTES = [
-    {
-        id: 1,
-        color: 'yellow',
-        text: 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.'
-    }
-]
+const Timer = React.createClass({
 
-const Note = React.createClass({
+    getInitialState() {
+        return {secondElapse: 0}
+    },
 
-    render(){
-        return(
+    componentDidMount() {
+        this.timer = setInterval(() => {
+            this.setState({
+                secondElapse: this.state.secondElapse + 1
+            });
+        }, 1000);
+    },
+
+    componentWillUnmount() {
+        clearInterval(this.timer);
+    },
+
+    render() {
+        return (
             <div>
-                Note!!!
+                <h1>
+                    Timer: {this.state.secondElapse}
+                </h1>
             </div>
         )
     }
-});
-
-const NoteEditor = React.createClass({
-
-    render(){
-        return(
-            <div>
-                NoteEditor!!!
-            </div>
-        )
-    }
-});
-
-const NotesGrid = React.createClass({
-
-    render(){
-        return(
-            <div>
-                NoteGrid!!!
-            </div>
-        )
-    }
-});
-
-const NotesApp = React.createClass({
-
-    render(){
-        return(
-            <div>
-                <NoteEditor />
-                <NotesGrid />
-            </div>
-        )
-    }
-});
+})
 
 ReactDOM.render(
-    <NotesApp />,
-    document.getElementById('root')
-);
+    <Timer/>, document.getElementById('root'));
