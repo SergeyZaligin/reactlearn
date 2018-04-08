@@ -1,3 +1,3 @@
 const greenHeartEmoji = require('emoji-green-heart');
 
-console.log(`I ${ greenHeartEmoji } Webpack!!!`);
+console.log(`I ${ greenHeartEmoji } Webpack!!!!!`);

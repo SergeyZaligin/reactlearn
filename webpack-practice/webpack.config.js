@@ -1,3 +1,5 @@
+const NODE_ENV = process.env.NODE_ENV || 'development'; 
+
 const path = require('path');
 
 module.exports = {
@@ -6,6 +8,8 @@ module.exports = {
     filename: 'bundle.js',
     path: path.resolve(__dirname, 'dist')
   },
+  devtool: NODE_ENV === 'development' && 'source-map',
+  watch: true,
   module: {
     rules: [
       {
