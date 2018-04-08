@@ -31,7 +31,7 @@ hr {
     height: auto;
     float: left;
     padding: 10px;
-    margin-bottom: 10px;
+    /* margin-bottom: 10px; */
 }
 
 .yellow {
