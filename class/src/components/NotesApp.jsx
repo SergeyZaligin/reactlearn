@@ -1,5 +1,5 @@
-import React from 'react';
-import createClass from 'create-react-class';
+import React, { Component } from 'react';
+// import createClass from 'create-react-class';
 import ReactDOM from 'react-dom';
 import NoteEditor from './NoteEditor';
 import NotesGrid from './NotesGrid';
@@ -25,11 +25,10 @@ const NOTES = [
                 'montes, nascetur ridiculus mus.'
     }
 ];
-
-const NotesApp = createClass({
-    getInitialState() {
-        return {notes: []}
-    },
+class NotesApp extends Component{
+    state = {
+        notes: []
+    }
 
     componentDidMount() {
         const saveNotes = JSON.parse(localStorage.getItem('notes'));
@@ -37,35 +36,35 @@ const NotesApp = createClass({
         if (saveNotes) {
             this.setState({notes: saveNotes});
         }
-    },
+    }
 
     componentDidUpdate(prevProps, prevState) {
         if (prevState.notes !== this.state.notes) {
             this.saveToLoacalStorage();
         }
-    },
+    }
 
-    handleNoteAdd(newNote) {
+    handleNoteAdd = (newNote) => {
         this.setState({
             notes: [
                 newNote, ...this.state.notes
             ]
         });
-    },
+    }
 
-    handleNoteDelete(id) {
+    handleNoteDelete = (id) => {
         this.setState({
             notes: this
                 .state
                 .notes
                 .filter(note => note.id !== id)
         });
-    },
+    }
 
-    saveToLoacalStorage() {
+    saveToLoacalStorage = () => {
         const notes = JSON.stringify(this.state.notes);
         localStorage.setItem('notes', notes);
-    },
+    }
 
     render() {
         return (
@@ -76,6 +75,6 @@ const NotesApp = createClass({
             </div>
         )
     }
-});
+}
 
 export default NotesApp;

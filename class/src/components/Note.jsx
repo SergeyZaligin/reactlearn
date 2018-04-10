@@ -1,14 +1,12 @@
-import React from 'react';
-import createClass from 'create-react-class';
-import ReactDOM from 'react-dom';
+import React, { Component } from 'react';
 
-const Note = createClass({
+class Note extends Component{
 
-    onHandleDelete() {
+    onHandleDelete = () => {
         this
             .props
             .onDelete(this.props.id);
-    },
+    }
 
     render() {
         const {text, color} = this.props;
@@ -19,6 +17,6 @@ const Note = createClass({
             </div>
         )
     }
-});
+}
 
 export default Note;

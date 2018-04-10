@@ -6,14 +6,6 @@ const DEFAUL_COLOR_NOTE = 'yellow';
 
 class NoteEditor extends Component{
 
-    // constructor(){
-    //     super();
-
-    //     this.state = {
-    //         text: ''
-    //     };
-    // }
-
     state = {
         text: ''
     }
