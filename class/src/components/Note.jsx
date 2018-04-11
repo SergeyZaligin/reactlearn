@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 class Note extends Component{
 
@@ -18,5 +19,10 @@ class Note extends Component{
         )
     }
 }
+
+Note.propTypes = {
+    color: PropTypes.string,
+    text: PropTypes.string
+  };
 
 export default Note;

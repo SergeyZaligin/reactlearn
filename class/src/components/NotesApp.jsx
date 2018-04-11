@@ -1,30 +1,31 @@
 import React, { Component } from 'react';
 // import createClass from 'create-react-class';
-import ReactDOM from 'react-dom';
+// import ReactDOM from 'react-dom';
 import NoteEditor from './NoteEditor';
 import NotesGrid from './NotesGrid';
 
-const NOTES = [
-    {
-        id: 1,
-        color: 'yellow',
-        text: 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula ' +
-                'eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient ' +
-                'montes, nascetur ridiculus mus.'
-    }, {
-        id: 2,
-        color: 'yellow',
-        text: 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula ' +
-                'eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient ' +
-                'montes, nascetur ridiculus mus.'
-    }, {
-        id: 3,
-        color: 'yellow',
-        text: 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula ' +
-                'eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient ' +
-                'montes, nascetur ridiculus mus.'
-    }
-];
+// const NOTES = [
+//     {
+//         id: 1,
+//         color: 'yellow',
+//         text: 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula ' +
+//                 'eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient ' +
+//                 'montes, nascetur ridiculus mus.'
+//     }, {
+//         id: 2,
+//         color: 'yellow',
+//         text: 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula ' +
+//                 'eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient ' +
+//                 'montes, nascetur ridiculus mus.'
+//     }, {
+//         id: 3,
+//         color: 'yellow',
+//         text: 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula ' +
+//                 'eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient ' +
+//                 'montes, nascetur ridiculus mus.'
+//     }
+// ];
+
 class NotesApp extends Component{
     state = {
         notes: []
